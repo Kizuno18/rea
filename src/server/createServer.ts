@@ -1,5 +1,8 @@
 import type { PacketCaptureService } from "../application/captures/PacketCaptureService.js";
-import { createPacketCaptureService } from "../composition/captures.js";
+import {
+  createPacketCaptureService,
+  createProcmonExportService,
+} from "../composition/captures.js";
 import { registerCaptureTools } from "./registerCaptureTools.js";
 import type { SignalRecordingService } from "../application/signals/SignalRecordingService.js";
 import { createSignalRecordingService } from "../composition/signals.js";
@@ -520,6 +523,7 @@ export const createServer = (
     toolLogger,
     recordEvidence,
     analysisAdmission,
+    createProcmonExportService(),
   );
   registerSignalTools(
     server,

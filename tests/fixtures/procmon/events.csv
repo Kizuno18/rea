@@ -1,0 +1,5 @@
+﻿"Time of Day","Process Name","PID","Operation","Path","Result","Detail"
+"4:51:23.1234567 PM","sample.exe","4120","CreateFile","C:\Temp\a, b.txt","SUCCESS","Desired Access: Generic Read"
+"4:51:23.1301000 PM","sample.exe","4120","RegOpenKey","HKLM\Software\Example","NAME NOT FOUND","Desired Access: Read"
+"4:51:23.2000000 PM","svc ""quoted"".exe","88","Process Create","C:\Windows\x.exe","SUCCESS","Command line: ""x.exe""
+/flag"

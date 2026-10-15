@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procmon>
+<processlist>
+<process><ProcessIndex>1</ProcessIndex><ProcessId>4120</ProcessId><ProcessName>sample.exe</ProcessName></process>
+</processlist>
+<eventlist>
+<event>
+<ProcessIndex>1</ProcessIndex>
+<Time_of_Day>4:51:23.1234567 PM</Time_of_Day>
+<Process_Name>sample.exe</Process_Name>
+<PID>4120</PID>
+<Operation>CreateFile</Operation>
+<Path>C:\Temp\a &amp; b.txt</Path>
+<Result>SUCCESS</Result>
+<Detail>Desired Access: Generic Read</Detail>
+</event>
+<event>
+<ProcessIndex>1</ProcessIndex>
+<Time_of_Day>4:51:23.1301000 PM</Time_of_Day>
+<Process_Name>sample.exe</Process_Name>
+<PID>4120</PID>
+<Operation>RegOpenKey</Operation>
+<Path><![CDATA[HKLM\Software\<Example>]]></Path>
+<Result>NAME NOT FOUND</Result>
+<Detail/>
+<stack><frame><depth>0</depth></frame></stack>
+</event>
+</eventlist>
+</procmon>

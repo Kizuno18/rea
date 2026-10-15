@@ -6,6 +6,10 @@ import {
   inspectPacketCaptureInputSchema,
   packetCaptureSchema,
 } from "../../domain/captures/packetCapture.js";
+import {
+  inspectProcmonExportInputSchema,
+  procmonExportSchema,
+} from "../../domain/captures/procmonExport.js";
 import type { ToolContract } from "../toolContractTypes.js";
 import { toolContractMetadata } from "../toolEffects.js";
 import { evidenceResultOf } from "../toolOutputSchemaPrimitives.js";
@@ -44,6 +48,30 @@ export const CAPTURE_TOOL_CONTRACTS = [
           decode_as: [],
           packet_limit: null,
           two_pass: true,
+        },
+      },
+    ],
+  },
+  {
+    name: "inspect_procmon_export",
+    ...toolContractMetadata("inspect_procmon_export"),
+    kind: "artifact-provider",
+    description:
+      "Read an existing Process Monitor export saved as XML or CSV (export_format auto|xml|csv) and return recorded events: Time of Day, Process Name, PID, Operation, Path, Result and Detail, each with its CSV line or XML event ordinal. Returns 200 events by default with event_offset/event_limit paging; event_limit:null returns all remaining. Columns absent from the export are listed in columns.missing and their values are null (unknown). Preserves export path, SHA-256 and byte length; truncated exports report coverage.status truncated with the complete events parsed so far. File-only: reads the selected export; Procmon, drivers, live tracing and PML decoding are not used. Recorded events reflect the exporter's filters, not complete system activity.",
+    inputSchema: inspectProcmonExportInputSchema,
+    outputSchema: evidenceResultOf(procmonExportSchema),
+    examples: [
+      {
+        title: "Read the first page of a CSV export",
+        input: { path: "/artifacts/logfile.csv" },
+      },
+      {
+        title: "Read every event from an XML export",
+        input: {
+          path: "/artifacts/logfile.xml",
+          export_format: "xml",
+          event_offset: 0,
+          event_limit: null,
         },
       },
     ],

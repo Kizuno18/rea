@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procmon>
+<eventlist>
+<event><Time_of_Day>1:00:00.0000000 AM</Time_of_Day><Process_Name>a.exe</Process_Name><PID>7</PID><Operation>ReadFile</Operation><Path>C:\a</Path><Result>SUCCESS</Result></event>
+<event><Time_of_Day>1:00:00.1000000 AM</Time_of_Day><Process_Name>a.ex

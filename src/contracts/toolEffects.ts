@@ -142,6 +142,7 @@ export const TOOL_EFFECTS: Readonly<Record<string, ToolEffects>> = {
     launchesProcess: true,
     writesFilesystem: true,
   }),
+  inspect_procmon_export: evidence,
   inspect_signal_decoders: effects({
     mutatesSession: true,
     launchesProcess: true,

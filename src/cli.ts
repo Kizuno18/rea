@@ -1,4 +1,5 @@
 import { registerCaptureCommands } from "./cli/captureCommands.js";
+import { registerProcmonCommands } from "./cli/procmonCommands.js";
 import { registerSignalCommands } from "./cli/signalCommands.js";
 import { registerWasmCommands } from "./cli/wasmCommands.js";
 import { snapshotEnvironment } from "./process/snapshotEnvironment.js";
@@ -103,6 +104,7 @@ export const createCli = (
   registerUtilityCommands(cli, logger, environment, analysis);
   registerWasmCommands(cli, logger, environment);
   registerCaptureCommands(cli, logger, environment);
+  registerProcmonCommands(cli, logger);
   registerSignalCommands(cli, logger, environment);
   registerEvmCommands(cli, logger, environment);
   registerGoCommands(cli, logger);

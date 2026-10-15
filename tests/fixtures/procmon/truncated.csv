@@ -1,0 +1,3 @@
+"Time of Day","Process Name","PID","Operation","Path","Result"
+"10:00:00.0000000 AM","a.exe","1","ReadFile","C:\a","SUCCESS"
+"10:00:00.1000000 AM","a.exe","1","Read
